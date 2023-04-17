@@ -17,8 +17,14 @@ blueprint:
       selector:
         action: {}
     slide:
-      name: Slide the cube
+      name: Slide the cube with any side up
       description: Action to run on slide movement
+      default: []
+      selector:
+        action: {}
+    slide1:
+      name: Slide the cube with side 1 up
+      description: Action to run on slide 1 movement
       default: []
       selector:
         action: {}
@@ -82,6 +88,9 @@ action:
   - conditions:
     - '{{ event in [1000, 2000, 3000, 4000, 5000, 6000] }}'
     sequence: !input 'slide'
+  - conditions:
+    - '{{ event === 1000 }}'
+    sequence: !input 'slide1'
   - conditions:
     - '{{ event in [1001, 2002, 3003, 4004, 5005, 6006] }}'
     sequence: !input 'double_tap'
