@@ -89,7 +89,7 @@ action:
     - '{{ event in [1000, 2000, 3000, 4000, 5000, 6000] }}'
     sequence: !input 'slide'
   - conditions:
-    - '{{ event === 1000 }}'
+    - '{{ event == 1000 }}'
     sequence: !input 'slide1'
   - conditions:
     - '{{ event in [1001, 2002, 3003, 4004, 5005, 6006] }}'
